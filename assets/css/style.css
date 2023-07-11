@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+    width: 100%;
+    
+}
+
+.questionArea {
+    text-align: center;
+    border: solid 5px blue;
+    border-radius: 30px;
+    margin: 50px 100px 100px 100px;
+}
+
+
+.button {
+    text-align: center;
+    
+    border-radius: 30px;
+    margin: 20px 400px 0 400px;
+       
+}
+
+footer h4 {
+    text-align: center;
+    background-color: bisque;
+}
+
+.hide{
+    display: none;
+}
