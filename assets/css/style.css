@@ -14,8 +14,7 @@ nav {
 
 .questionArea {
     text-align: center;
-    border: solid 5px blue;
-    border-radius: 30px;
+        border-radius: 30px;
     margin: 50px 100px 100px 100px;
 }
 
@@ -35,4 +34,8 @@ footer h4 {
 
 .hide{
     display: none;
+}
+
+.messageNotification {
+    text-align: center;
 }

@@ -70,10 +70,9 @@ function startTimer() {
         timeRemaining--;
         timerCount.textContent = timeRemaining;
         //stopping the timer
-        if (timeRemaining === 0) {
+        if (timeRemaining <= 0) {
             window.clearInterval(timerClock);
             timerCount.textContent = "Out of Time!";
-            return
         }
     }, 1000);
 
@@ -103,10 +102,7 @@ function renderQuestions() {
         var btn = document.createElement('button');
         // add content to the buton
         btn.textContent = questions[questionIndex].answerChoices[i]
-
         btn.addEventListener('click', click)
-
-        // append the button
         answerContent.append(btn)
     }
 
@@ -117,11 +113,26 @@ function renderQuestions() {
 
 function click(event) {
     console.log(event.target.textContent);
-    if(event.target.textContent !== questions[questionIndex].answer){
+    if (event.target.textContent !== questions[questionIndex].answer) {
         timeRemaining = timeRemaining - penalty;
-        timerCount.textContent = timeRemaining;
+        // timerCount.textContent = timeRemaining 
+        messageNotification.textContent = "Sorry, Wrong Answer";
+    } else {
+        messageNotification.textContent = "Correct!";
     }
 
+
+}
+
+
+function finishedQuiz() {
+    messageNotification.textContent = "Quiz complete."
+
+    if (timeRemaining >= 0) {
+        clearInterval(timerClock);
+        messageNotification.textContent = "Your score is: " + timeRemaining;
+
+    }
 
 }
 
